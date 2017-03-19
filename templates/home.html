@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+
+<div class="jumbotron">
+  <h1>Hello</h1>
+  <p>You are on inventory Dashboard</p>  
+</div>
+</div>
+<div class="row">
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Item Name</th>
+      <th>Item Description</th>
+      <th>Item Quantity</th>
+      <th>Item Added on</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in inventory %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.item.name }}</td>
+      <td>{{ i.item.description }}</td>
+      <td>{{ i.quantity }}</td>
+      <td>{{ i.added_on }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+{% endblock %}
